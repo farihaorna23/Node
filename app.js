@@ -3,6 +3,8 @@ const fs = require("fs");
 //relative path
 let filePath = "./jsQuestions.md";
 
+//callback functions after it reads the file
+//content is the content from the file
 fs.readFile(filePath, (err, content) => {
   if (err) {
     console.error(err);
