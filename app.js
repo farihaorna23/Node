@@ -1,14 +1,20 @@
-//Running js in local computer
-//console.log("Hello");
+const fs = require("fs");
 
-const http = require("http");
+//relative path
+let filePath = "./jsQuestions.md";
 
-http
-  .createServer((request, response) => {
-    response.writeHead(200, { "Content-Type": "text/html" });
-    response.write("Hello, testing from the server");
-    response.end();
-  })
-  .listen(5000, () => {
-    console.log("Server Running...");
-  });
+fs.readFile(filePath, (err, content) => {
+  if (err) {
+    console.error(err);
+  } else {
+    //without toString we get a buffer. So we need to decode it
+    let stats = content
+      .toString()
+      .split("")
+      .reduce((counts, char) => {
+        counts[char] = counts[char] ? counts[char] + 1 : 1;
+        return counts;
+      }, {});
+    console.log(stats);
+  }
+});
