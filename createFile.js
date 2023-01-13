@@ -1,7 +1,7 @@
 //importing fs module
 const fs = require("fs");
 
-let filePath = "./delete.txt";
+let filePath = "./path.js";
 let content = "This is for the delete file";
 
 fs.appendFile(filePath, content, err => {
