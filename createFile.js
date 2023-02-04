@@ -1,7 +1,7 @@
 //importing fs module
 const fs = require("fs");
 
-let filePath = "./path.js";
+let filePath = "./path/table.html";
 let content = "This is for the delete file";
 
 //if file doesn't exist, will create a file
