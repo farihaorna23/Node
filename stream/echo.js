@@ -13,9 +13,9 @@ http
         req.write("An error occurred on the server :(");
         req.end();
       })
-      .on("data", chunk => chunks.push(chunk))
+      .on("data", chunk => chunks.push(chunk)) //getting all the data and storing it in the memory
       .on("end", () => {
-        const body = Buffer.concat(chunks).toString();
+        const body = Buffer.concat(chunks).toString(); //parse it if you want to access as an obj
 
         res.on("error", err => {
           console.error(err);
@@ -60,6 +60,7 @@ http
     });
 
     //read from the request and write down the content from request to res. Echoing.
+    //read and res body are both readable and writeable streams
     req.pipe(res);
   })
   .listen(3000, () => console.log("Server listening on port 3000..."));

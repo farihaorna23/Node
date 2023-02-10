@@ -25,7 +25,7 @@ http
     //creating a readable stream
     let src = fs.createReadStream(path.join(__dirname, filePath));
     res.writeHead(statusCode, { "Content-Type": contentType });
-    //reading from the src and piping the content to response
+    //reading from the src (the readable stream)and piping the content to response
     src.pipe(res);
     //don't need to end response. Pipe will trigger an end event for the write stream
   })
