@@ -1,5 +1,9 @@
 //module is an obj, you can destructure
-//depending on the url, the server will send a file by reading its content
+//Objective: depending on the url, the server will send a file by reading its content
+//just reading from the file and directly piping the content to the response body without storing it in the memory
+
+//if the content from a readstream needs to be handles, it needs to be read and stored in the memory to be evaluated it, do what needs to be done and send the content as the response
+//our request and response are both streams (Readable and Writable respectively), we can use our new pipe() method to directly read the content and pipe the content to the responsebody
 const http = require("http");
 const path = require("path");
 const fs = require("fs");

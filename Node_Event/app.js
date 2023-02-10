@@ -1,6 +1,7 @@
 // Node.js is event driven. We can harness the power of events by listening for, and handling events with functions
 // The EventEmitter class can be imported from the events module, and used to create our own EventEmitter instance for creating and handling events
-// Fire an event with the emit("event") method. Listen and handle an event with the on("event", handleEvent) method
+// Fire an event with the emit("event") method.
+//Listen and handle an event with the on("event", handleEvent) method
 
 const { EventEmitter } = require("events");
 const result = new EventEmitter();
@@ -18,6 +19,7 @@ result.on("incorrect", val => {
 //triggering an event and passing a value for the handler function
 result.emit("correct", 12);
 
+//will emit an eveit every 5 seconds
 result.on("start", () => {
   setTimeout(() => {
     //to get a number between 0-10

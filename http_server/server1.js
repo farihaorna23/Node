@@ -25,6 +25,7 @@ http
           age: 25,
           gender: "female"
         };
+        //converting the object into string so that it can be send back to the client
         resbody = JSON.stringify(info);
         contentType = "application/json";
       } else if (url === "/echo" && method == "POST") {
