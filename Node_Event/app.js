@@ -2,7 +2,7 @@
 // The EventEmitter class can be imported from the events module, and used to create our own EventEmitter instance for creating and handling events
 // Fire an event with the emit("event") method.
 //Listen and handle an event with the on("event", handleEvent) method
-
+//When the EventEmitter object emits an event, all of the functions attached to that specific event are called synchronously.
 const { EventEmitter } = require("events");
 const result = new EventEmitter();
 
